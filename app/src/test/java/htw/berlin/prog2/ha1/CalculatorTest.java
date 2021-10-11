@@ -27,6 +27,23 @@ class CalculatorTest {
     }
 
     @Test
+    @DisplayName("should display result after adding two positive multi-digit numbers")
+    void testPositiveRepeatedAddition() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(2);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(2);
+        calc.pressEqualsKey();
+        calc.pressEqualsKey();
+
+        String expected = "6";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
     @DisplayName("should display result after getting the square root of two")
     void testSquareRoot() {
         Calculator calc = new Calculator();
