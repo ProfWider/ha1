@@ -31,13 +31,13 @@ class CalculatorTest {
     void testPositiveRepeatedAddition() {
         Calculator calc = new Calculator();
 
-        calc.pressDigitKey(2);
+        calc.pressDigitKey(1);
         calc.pressBinaryOperationKey("+");
-        calc.pressDigitKey(2);
+        calc.pressDigitKey(1);
         calc.pressEqualsKey();
         calc.pressEqualsKey();
 
-        String expected = "6";
+        String expected = "3";
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
